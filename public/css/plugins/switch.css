@@ -1,0 +1,15 @@
+.switch,.switch *{box-sizing:content-box;margin:0}
+.switch{position:relative;display:inline-block;padding:3px;width:72px;height:24px;border-radius:3px;color:#fff;font-size:14px;cursor:pointer}
+.switch.switch-on{background:#1abc9c}
+.switch.switch-off{background:#e85848}
+.switch .s-witch{float:left;padding:0 4px;width:28px;height:24px;text-align:center;text-decoration:none;line-height:24px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none}
+.switch .switch-slid{position:absolute;width:35px;height:24px;border-radius:3px;background:#fff;-webkit-transition:all .2s;transition:all .2s}
+.switch .switch-slid:before{left:9px}
+.switch .switch-slid:after,.switch .switch-slid:before{position:absolute;top:4px;width:4px;height:1pc;content:""}
+.switch .switch-slid:after{left:20px}
+.switch.switch-on .switch-slid{left:4px}
+.switch.switch-off .switch-slid{left:39px}
+.switch.switch-on .switch-slid:after,.switch.switch-on .switch-slid:before{background:#1abc9c}
+.switch.switch-off .switch-slid:after,.switch.switch-off .switch-slid:before{background:#e85848}
+.switch.disabled{opacity:.6}
+.switch.disabled,.switch.disabled .s-witch{cursor:not-allowed}

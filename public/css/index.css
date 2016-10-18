@@ -1,0 +1,114 @@
+html{
+    width:100%;
+    overflow:hidden;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #34495E;
+    background-color: #fff;
+}
+li{list-style: none;}
+header{
+    height: 50px;
+    border-bottom: 1px solid #E5E5E5;
+}
+body a{
+    color: #34495E;
+}
+pre code{
+    font-family: 'Roboto Mono', Monaco, courier, monospace;
+    font-size: 0.8em;
+    font-size: 14px;
+    border-left: 3px solid #2FA678;
+}
+h3{
+    font-weight: normal;
+    color: #2FA678;
+    border-left: 3px solid #2FA678;
+    padding-left: 5px;
+}
+.ui-header .ui-logo{
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 50px;
+    color: #2c3e50;
+    font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.ui-header ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.ui-header ul li a:hover{
+    border-bottom: 2px solid #42B983;
+}
+
+.ui-banner{
+    height: 335px;
+    background: linear-gradient(90deg,#1d976c 10%,#93f9b9 90%);
+    filter: none;
+    color: #e9e9e9;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    text-align: left;
+}
+.ui-nav{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ui-nav li a{
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.ui-nav li a:hover{
+    color: #1D976C;
+}
+.ui-nav .active a{
+    padding-left: 18px;
+    font-weight: 700;
+    color: #1d976c;
+    background-color: transparent;
+    border-left: 2px solid #1d976c;
+}
+.ui-leftcontent ul{
+    border: 1px solid #DDDDDD;
+    padding: 20px;
+}
+
+.ui-border{
+    border: 1px solid;
+}
+
+#imgdiv img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

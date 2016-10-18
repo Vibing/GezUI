@@ -1,0 +1,287 @@
+/*
+    定义组件默认样式
+*/
+
+/*button*/
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    transition: all linear 0.2s;
+}
+
+.disabled, .btn.disabled, .btn[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default:hover {
+    border-color: #555;
+}
+
+.btn-gray {
+    color: #5A5A5A;
+    background-color: #E0E1E2;
+    border-color: #E0E1E2;
+}
+
+.btn-gray:hover, .btn-gray:focus, .btn-gray:active {
+    border-color: #CACBCD;
+    background-color: #CACBCD;
+    color: #292929;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #1ABC9C;
+    border-color: #1ABC9C;
+}
+
+.btn-green:hover, .btn-green:focus, .btn-green:active {
+    border-color: #16A085;
+    background-color: #16A085;
+    color: #fff;
+}
+
+.btn-red {
+    color: #fff;
+    background-color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.btn-red:hover {
+    border-color: #C0392B;
+    background-color: #C0392B;
+    color: #fff;
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: #3498DB;
+    border-color: #3498DB;
+}
+
+.btn-blue:hover {
+    border-color: #2980B9;
+    background-color: #2980B9;
+    color: #fff;
+}
+
+.btn-orange {
+    color: #fff;
+    background-color: #E67E22;
+    border-color: #E67E22;
+}
+
+.btn-orange:hover {
+    border-color: #D35400;
+    background-color: #D35400;
+    color: #fff;
+}
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/*input*/
+.ipt {
+    font-size: 14px;
+    color: #555555;
+    width: 200px;
+    border: 1px solid #DEDEDE;
+    height: 33px;
+    outline: none;
+    padding: 0 10px;
+}
+
+.ipt:focus, .select:focus, .textarea:focus {
+    border-color: #85B7D9;
+}
+
+/*select*/
+.select {
+    font-size: 14px;
+    color: #555555;
+    border: 1px solid #DEDEDE;
+    height: 33px;
+    outline: none;
+    transition: all linear 0.25s;
+    padding: 0 10px;
+}
+
+.textarea {
+    font-size: 14px;
+    color: #555555;
+    border: 1px solid #DEDEDE;
+    outline: none;
+    transition: all linear 0.25s;
+    padding: 10px;
+}
+
+/*paging*/
+.paging {
+    margin: 10px 0 0;
+    text-align: center;
+    line-height: 32px;
+    font-size: 0;
+    letter-spacing: -0.307em;
+    word-wrap: normal;
+    white-space: nowrap;
+    color: #999;
+}
+.paging a, .paging i {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 12px;
+    margin-left: -1px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    letter-spacing: normal;
+    text-shadow: 0 1px #fff;
+    background: #fff;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.paging a, .paging a:hover {
+    text-decoration: none;
+    color: #3498DB;
+}
+
+.paging a:first-child {
+    margin-left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.paging a:last-child {
+    margin-right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.paging a.pageprv:before, .paging a.pagenxt:after {
+    font-weight: bold;
+    font-family: \5b8b\4f53;
+    vertical-align: top;
+}
+
+.paging a.pageprv:before {
+    margin-right: 3px;
+    content: '\3C';
+}
+
+.paging a.pagenxt:after {
+    margin-left: 3px;
+    content: '\3E';
+}
+
+.paging a:hover {
+    background: #f5f5f5;
+}
+
+.paging a:active {
+    background: #f0f0f0;
+}
+
+.paging a.z-crt, .paging a.z-crt:hover, .paging a.z-crt:active {
+    cursor: default;
+    color: #999;
+    background: #f5f5f5;
+}
+
+.paging a.z-dis, .paging a.z-dis:hover, .paging a.z-dis:active {
+    cursor: default;
+    color: #ccc;
+    background: #fff;
+}
+
+/* 居左 */
+.paging-lt {
+    text-align: left;
+}
+
+/* 居右 */
+.paging-rt {
+    text-align: right;
+}
+
+/* 较小 */
+.paging-sm {
+    line-height: 22px;
+}
+
+.paging-sm a, .paging-sm i {
+    padding: 0 8px;
+}
+
+/* 分离 */
+.paging-sr a, .paging-sr i {
+    margin: 0 3px;
+    border-radius: 5px;
+}
+
+.paging-sr i {
+    border: 0;
+}
+
+.paging-sr a:first-child, .paging-sr a:last-child {
+    border-radius: 5px;
+}
+
+
+/*table*/
+.table{table-layout:fixed;width:100%;line-height:1.5;}
+.table th,.table td{padding:10px;border:1px solid #ddd;}
+.table th{font-weight:bold;}
+.table tbody tr:nth-child(2n){background:#fafafa;}
+.table tbody tr:hover{background:#f0f0f0;}
+.table-center th,.table-center td{text-align: center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

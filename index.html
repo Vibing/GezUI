@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>GezUI</title>
+
+    <link rel="stylesheet" href="public/css/ui/gezui-iframe.css"/>
+    <link rel="stylesheet" href="public/css/index.css"/>
+    <link rel="stylesheet" href="public/css/icon/iconfont.css"/>
+
+    <link rel="stylesheet" href="public/css/plugins/switch.css"/>
+    <link rel="stylesheet" href="public/css/plugins/ui-dialog.css"/>
+    <link rel="stylesheet" href="public/css/plugins/tips-mini.css"/>
+    <link rel="stylesheet" href="public/css/plugins/laydate.css"/>
+    <link rel="stylesheet" href="public/css/ui/gezui.css"/> <!--包括reset、栅格系统-->
+    <link rel="stylesheet" href="public/css/ui/gezui-component.css"/><!--组件：button、table、input、分页-->
+    <link rel="stylesheet" href="public/css/ui/gezui-style.css"/><!--常用公共样式-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+<body>
+<header>
+    <div class="container">
+        <nav class="ui-header">
+            <span class="ui-logo">GezUI</span>
+            <ul class="fr">
+                <li><a target="_blank" href="https://segmentfault.com/u/ve">SegmentFault</a></li>
+                <li><i class="iconfont fs-18 icon-github"></i><a target="_blank" href="https://github.com/Vibing">GitHub</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="ui-banner">
+    <div class="container">
+        <h1 class="fw-normal">GezUI</h1>
+        <p class="ff-yahei">根据自己公司多个项目 所开发出的实用且拓展性强的UI 主打实用性</p>
+    </div>
+</div>
+
+<div class=" j-ui-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-l-9 ui-leftcontent">
+                <!--Table-->
+                <div class="row">
+                        <h3 id="stylecss" class="fs-18 ff-yahei">style公用样式说明</h3>
+<pre>
+<code>
+    style.css中存在的样式是常用公用型样式。
+
+    为了方便记忆，我们采用<span class="hljs-string fw-bold">单词首字母 - 值</span>的形式命名。
+
+    例如：<span class="hljs-string fw-bold">font-weight:bold</span> 我们取key部分的每个单词首字母加"-"，然后跟上想要的属性值bold 即结果为：<span class="hljs-string fw-bold">fw-bold</span>
+
+    下面为大家举出几种常用样式的分类：
+
+
+    font-family：
+    .ff-simsun
+    .ff-yahei
+    .ff-georgia
+
+    /*字体大小*/
+    font-size：
+    .fs-12 至 .fs-30 以偶数2递增
+
+    /*字体粗细*/
+    font-weight：
+    .fw-bold     //粗体
+    .fw-normal   //正常
+
+    /*字体颜色*/
+    color：
+    .c-000 至 c-fff   //纯黑-纯白
+
+    /*背景颜色*/
+    background-color:
+    .bc-000 至 bc-fff //纯黑-纯白
+
+    /*外边距、内边距*/
+    margin和padding //10px以内 1-10都有 超出10px以外 以5px递增至50px
+
+    margin-left:
+    .m-*   //margin:xx
+    .ml-*  //margin-left:xx
+
+    /*行高*/
+    .lh-2 至 .lh-60 //表示line-height:2 至 line-height:60 以2递增
+
+    //除了以2递增 还有经常用的以5递增
+    .lh-5 至 .lh-60 //表示line-height:5 至 line-height:60 以5递增
+
+    /*宽度、高度*/
+    width：
+    .w-0 至 .w-100   //表示width:0px 至 width:100px 以5递增
+    .w-100 至 .w-200 //表示width:100px 至 width:200px 以10递增
+    高度类似
+
+
+    除了上面提到的规律性命名 还有个别特殊命名：
+
+    /*浮动*/
+    float:left  -->  fl
+    float:left  -->  fr
+
+    /*字体浮动*/
+    text-align:
+    .tc //text-align:center
+    .tr //text-align:right
+    .tl //text-align:left
+
+    /*清除浮动*/
+    .clearfix
+
+    style.css中提供的颜色有.c-red(红色)、.c-blue(蓝色)、.c-green(绿色)以及 #000 - #fff 之间
+    为了方便看到颜色 下面举出色块：
+</code>
+</pre>
+                                <div class="w-50 h-50 bc-000 lh-50 tc fl mr-10 mb-10 ui-border">#000</div>
+                                <div class="w-50 h-50 bc-111 lh-50 tc fl mr-10 mb-10 ui-border">#111</div>
+                                <div class="w-50 h-50 bc-222 lh-50 tc fl mr-10 mb-10 ui-border">#222</div>
+                                <div class="w-50 h-50 bc-333 lh-50 tc fl mr-10 mb-10 ui-border">#333</div>
+                                <div class="w-50 h-50 bc-444 lh-50 tc fl mr-10 mb-10 ui-border">#444</div>
+                                <div class="w-50 h-50 bc-555 lh-50 tc fl mr-10 mb-10 ui-border">#555</div>
+                                <div class="w-50 h-50 bc-666 lh-50 tc fl mr-10 mb-10 ui-border">#666</div>
+                                <div class="w-50 h-50 bc-777 lh-50 tc fl mr-10 mb-10 ui-border">#777</div>
+                                <div class="w-50 h-50 bc-888 lh-50 tc fl mr-10 mb-10 ui-border">#888</div>
+                                <div class="w-50 h-50 bc-999 lh-50 tc fl mr-10 mb-10 ui-border">#999</div>
+                                <div class="w-50 h-50 bc-aaa lh-50 tc fl mr-10 mb-10 ui-border">#aaa</div>
+                                <div class="w-50 h-50 bc-bbb lh-50 tc fl mr-10 mb-10 ui-border">#bbb</div>
+                                <div class="w-50 h-50 bc-ccc lh-50 tc fl mr-10 mb-10 ui-border">#ccc</div>
+                                <div class="w-50 h-50 bc-ddd lh-50 tc fl mr-10 mb-10 ui-border">#ddd</div>
+                                <div class="w-50 h-50 bc-eee lh-50 tc fl mr-10 mb-10 ui-border">#eee</div>
+                                <div class="w-50 h-50 bc-fff lh-50 tc fl mr-10 mb-10 ui-border">#fff</div>
+                    </div>
+                <!--End Table-->
+
+                <!--Button-->
+                <div class="row">
+                        <h3 id="buttons" class="fs-18 ff-yahei">Button</h3>
+                        <ul class="buttons">
+                            <li>
+                                <a href="#" class="btn btn-default">默认</a>
+                                <button class="btn btn-default">默认</button>
+                                <a href="#" class="btn btn-gray">灰色</a>
+                                <button class="btn btn-gray">灰色</button>
+                                <a href="#" class="btn btn-green">绿色</a>
+                                <button class="btn btn-green">绿色</button>
+                                <a href="#" class="btn btn-red">红色</a>
+                                <button class="btn btn-red">红色</button>
+                                <a href="#" class="btn btn-blue">蓝色</a>
+                                <button class="btn btn-blue">蓝色</button>
+                                <a href="#" class="btn btn-orange">橙色</a>
+                                <button class="btn btn-orange">橙色</button>
+                            </li>
+                            <li class="mt-10">
+                                <button class="btn btn-orange btn-block">橙色</button>
+                            </li>
+                            <li class="mt-10">
+                                <p>你可以为按钮添加添加class="disabled"，使其不能响应事件：</p>
+                                <a href="#" class="btn btn-default disabled">默认</a>
+                                <a href="#" class="btn btn-gray disabled">灰色</a>
+                                <a href="#" class="btn btn-green disabled">绿色</a>
+                                <a href="#" class="btn btn-red disabled">红色</a>
+                                <a href="#" class="btn btn-blue disabled">蓝色</a>
+                                <a href="#" class="btn btn-orange disabled">橙色</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!--End Button-->
+                <!--Input-->
+                <div class="row">
+                        <h3 id="ipts" class="fs-18 ff-yahei">输入框和下拉</h3>
+                        <ul class="inputs">
+                            <li>
+                                <form action="">
+                                    <strong>输入框：</strong><input class="ipt" type="text" placeholder="请输入名称"/>
+                                </form>
+                            </li>
+                            <li class="mt-10">
+                                <form action="">
+                                    <strong>下拉框：</strong><select class="select"><option>请选择</option></select>
+                                </form>
+                            </li>
+                            <li class="mt-10">
+                                <form action="">
+                                    <strong>文本框：</strong><textarea class="textarea" placeholder="用户名"></textarea>
+                                </form>
+                            </li>
+                        </ul>
+                </div>
+                <!--End Input-->
+
+                <!--Input-->
+                <div class="row">
+                        <h3 id="pagings" class="fs-18 ff-yahei">分页</h3>
+                        <ul class="pagings">
+                            <li>
+                                分页完全版(居中)：
+                                <nav class="paging">
+                                    <a href="#" class="pageprv z-dis"></a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                    <a href="#" class="pagenxt"></a>
+                                </nav>
+                            </li>
+                            <li>
+                                不带左右箭头(居中)：
+                                <nav class="paging">
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                </nav>
+                            </li>
+                            <li>
+                                不带页码(居中)：
+                                <nav class="paging">
+                                    <a href="#" class="pageprv z-dis">上一页</a>
+                                    <a href="#" class="pagenxt">下一页</a>
+                                </nav>
+                            </li>
+                            <li>
+                                左浮动：
+                                <nav class="paging paging-lt">
+                                    <a href="#" class="pageprv">上一页</a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                    <a href="#" class="pagenxt z-dis">下一页</a>
+                                </nav>
+                            </li>
+                            <li>
+                                右浮动：
+                                <nav class="paging paging-rt">
+                                    <a href="#" class="pageprv z-dis">上一页</a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                    <a href="#" class="pagenxt">下一页</a>
+                                </nav>
+                            </li>
+                            <li>
+                                分离：
+                                <nav class="paging paging-rt paging-sr">
+                                    <a href="#" class="pageprv z-dis">上一页</a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                    <a href="#" class="pagenxt">下一页</a>
+                                </nav>
+                            </li>
+                            <li>
+                                迷你分页：
+                                <nav class="paging paging-sr paging-sm">
+                                    <a href="#" class="pageprv z-dis">上一页</a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="z-crt">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <i>...</i>
+                                    <a href="#">10</a>
+                                    <a href="#" class="pagenxt">下一页</a>
+                                </nav>
+                            </li>
+                        </ul>
+                </div>
+                <!--End Input-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="tables" class="fs-18 ff-yahei">Table</h3>
+                        <ul class="tables">
+                            <li>
+                                左对齐：
+                                <table class="table">
+                                    <thead>
+                                    <tr><th class="cola">格边框</th><th>表头</th><th class="cola">表头</th><th class="cola">表头</th><th class="colb">表头</th></tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                居中：
+                                <table class="table table-center">
+                                    <thead>
+                                    <tr><th class="cola">格边框</th><th>表头</th><th class="cola">表头</th><th class="cola">表头</th><th class="colb">表头</th></tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    <tr><td>内容</td><td>内容内容内容内容内容内容内容</td><td>内容内容</td><td>内容内容</td><td>内容内容内容</td></tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                </div>
+                <!--End Table-->
+                <!--Table-->
+                <div class="row">
+                        <h3 id="scroll" class="fs-18 ff-yahei">滚动条</h3>
+
+                            <pre>
+                                <code>
+    最简单用法：$("html").niceScroll();
+
+    设置滚动条颜色：$("#thisdiv").niceScroll({cursorcolor:"#00F"});
+
+    获取滚动条对象：var nice = $("#mydiv").getNiceScroll();
+
+    检查滚动条调整：$("#mydiv").getNiceScroll().resize();
+                                </code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="grid" class="fs-18 ff-yahei">栅格系统</h3>
+                            <pre>
+                                <code>
+    该框架在Bootstrap的栅格系统上做了修改 成为比较实用的css响应式布局框架
+    栅格简介：http://v3.bootcss.com/css/#grid
+
+    理解节点：
+    超小屏幕（手机，小于 768px）
+    没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？）
+
+    小屏幕（平板，大于等于 768px）
+    @media (min-width: @screen-m-min) { ... }
+
+    中等屏幕（桌面显示器，大于等于 992px）
+    @media (min-width: @screen-l-min) { ... }
+
+    大屏幕（大桌面显示器，大于等于 1200px）
+    @media (min-width: @screen-xl-min) { ... }
+
+    我们偶尔也会在媒体查询代码中包含 max-width 从而将 CSS 的影响限制在更小范围的屏幕大小之内。
+    @media (max-width: @screen-s-max) { ... }
+    @media (min-width: @screen-m-min) and (max-width: @screen-s-max) { ... }
+    @media (min-width: @screen-l-min) and (max-width: @screen-m-max) { ... }
+    @media (min-width: @screen-xl-min) { ... }
+
+    栅格分类介绍：
+
+    为了记忆方便 将栅格系统的尺寸节点划分为<span class="hljs-string fw-bold">衣服尺码</span> 即：<span class="hljs-string fw-bold">s、m、l、xl</span>
+    .col-s-* : 超小屏幕(手机,小于768px)
+    .col-m-* : 小屏幕(平板,大于等于 768px)
+    .col-l-* : 中等屏幕(桌面显示器,大于等于 992px)
+    .col-xl-* : 大屏幕(大桌面显示器,大于等于 1200px)
+
+    注意：row必须放在container或者container-fluid(100%)中
+                                </code>
+                            </pre>
+                            <pre>
+                                <code>
+    gez-ui.css的辅助类：针对不同屏幕尺寸隐藏或显示页面内容
+
+    所有.visible-*-*默认为display:none;
+
+    .visible-s-* : 屏幕小于等于767px时 显示
+    .visible-m-* : 屏幕大于等于768px 并 小于等于 991px时 显示
+    .visible-l-* ：屏幕大于等于992px 并 小于等于 1199时 显示
+    .visible-xl-* : 屏幕大于等于1200px时 显示
+
+    .hidden-s-* ： 屏幕小于等于767px时 隐藏
+
+    .hidden-m-* ： 屏幕大于等于768px 并 小于等于991px时 隐藏
+    .hidden-l-* ： 屏幕大于等于992px 并 小于等于1199px时 隐藏
+    .hidden-xl-* ： 屏幕大于等于1200px时 隐藏
+
+    同样以<span class="hljs-string fw-bold">衣服尺码</span>来记忆：<span class="hljs-string fw-bold">s、m、l、xl</span>
+                                </code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="switch" class="fs-18 ff-yahei">Switch开关</h3>
+                                <input class="switchbox" text-left="是" text-right="否" type="checkbox" />
+                                <input class="switchbox2" text-on="ON" text-off="OFF" type="checkbox" checked/>
+                                <input class="switchbox" type="checkbox" checked disabled/>
+                                <button class="btn btn-green j-setProp">设置属性</button>
+                            <pre>
+                                <code>
+    html: &lt;input text-on="ON" text-off="OFF" type="checkbox" /&gt;
+    启用：&lt;input  type="checkbox" checked /&gt;
+    禁用：&lt;input  type="checkbox" disabled /&gt;
+
+    js初始化调用：
+    $('.switchbox').switch({
+        beforeChange:function (obj, state, next) {
+            console.log('before');
+            next();//考虑到异步情况，这里采用nodejs中间件的方式，只有执行next()时，才会继续往下执行
+        },
+        afterChange: function(obj, state) {
+            console.log('after');
+        },
+        change: function(obj, state) {
+            console.log('change');
+        }
+    });
+    
+    $('.switchbox2').switch({
+        beforeChange:function (obj, state, next) {
+            console.log('before');
+            //模拟ajax延迟
+            setTimeout(next,1000);
+        },
+        afterChange: function(obj, state) {
+            console.log('after');
+        },
+        change: function(obj, state) {
+            console.log('change');
+        }
+    });
+    
+    你也可以对它的状态进行设置：
+    $('.switchbox2').setSwitch({
+            checked: true,  //设置checked属性为true
+            disabled: true  //设置disabled属性为true
+    });
+                                </code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="dialog" class="fs-18 ff-yahei">Dialog</h3>
+                            <pre>
+                                <code>
+    //普通dialog
+    var d = dialog({
+        title: '欢迎',
+        content: '欢迎使用 artDialog 对话框组件！'
+    });
+    d.show();
+    <button class="btn btn-default dialog1">运行</button>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code>
+    //常用dialog
+    var d = dialog({
+        id:'',          //防止重复ID对话框弹出。dialog.get(id)获取某个对话框
+        title: '欢迎',
+        content: '欢迎使用 artDialog 对话框组件！',
+        skin:'',        //在dialog外围添加一个class名 可用于定制皮肤
+        padding:0,
+        width:'',
+        height:'',
+        zIndex:87,
+        okValue:'OK',   //自定义确定按钮名称
+        cancelValue:'cancel',
+        onshow:function(){},//dialog初始化回调
+        onclose:function(){},//dialog关闭时回调
+        ok:function(){},//dialog确定时回调
+        cancel:function(){}//dialog取消时回调
+    })showModal();
+    <button class="btn btn-default dialog2">运行</button>
+                                </code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="tips" class="fs-18 ff-yahei">迷你Tips</h3>
+                            <pre>
+<code>
+    //所有参数：
+    $.Tool.tips({
+        renderTo: 'body',   //放置位置 默认body内
+        type : 0,           //0=错误 1=成功 2=警告
+        autoClose : true,   //是否自动关闭 默认true
+        removeOthers : true,//是否关闭其他提示 默认true
+        time : 2000,        //显示时间 默认为2000ms
+        top :'40%',         //距离顶部 默认为40%
+        onClose : null,     //关闭时回调
+        onShow : null       //显示时回调
+    });
+    //常用写法：
+    $.Tool.tips({type:1,content:'通过了！'});
+    <button class="btn btn-default tips1">运行</button>
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="validform" class="fs-18 ff-yahei">表单验证</h3>
+                            <pre>
+<code>
+    $(".demoform").Validform({
+        btnSubmit:"#btn_sub",
+        btnReset:".btn_reset",
+        tiptype:1,
+        ignoreHidden:false,
+        dragonfly:false,
+        tipSweep:true,
+        label:".label",
+        showAllError:false,
+        postonce:true,
+        ajaxPost:true,
+        datatype:{
+            "*6-20": /^[^\s]{6,20}$/,
+            "z2-4" : /^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/,
+            "username":function(gets,obj,curform,regxp){
+                /*
+                    参数gets是获取到的表单元素值，obj为当前表单元素，curform为当前验证的表单，
+                    regxp为内置的一些正则表达式的引用;
+                */
+                var reg1=/^[\w\.]{4,16}$/,
+                reg2=/^[\u4E00-\u9FA5\uf900-\ufa2d]{2,8}$/;
+
+                if(reg1.test(gets)){return true;}
+                if(reg2.test(gets)){return true;}
+                return false;
+                /*
+                注意return可以返回true 或 false 或 字符串文字，true表示验证通过，
+                返回字符串表示验证失败，字符串作为错误提示显示，返回false则用errmsg或默认的错误提示;
+                */
+            },
+            "phone":function(){
+                // 5.0 版本之后，要实现二选一的验证效果，datatype 的名称 不 需要以 "option_" 开头;
+            }
+        },
+        usePlugin:{
+        swfupload:{},
+        datepicker:{},
+        passwordstrength:{},
+        jqtransform:{
+            selector:"select,input"
+        }
+        },
+        beforeCheck:function(curform){
+            //在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+            //这里明确return false的话将不会继续执行验证操作;
+        },
+        beforeSubmit:function(curform){
+            //在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+            //这里明确return false的话表单将不会提交;
+        },
+        callback:function(data){
+            /*
+                返回数据data是json对象，{"info":"demo info","status":"y"}
+                info: 输出提示信息;
+                status: 返回提交数据的状态,是否提交成功。
+                如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，
+                主要用在callback函数里根据该值执行相应的回调操作;
+
+                你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+                ajax遇到服务端错误时也会执行回调，
+                这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+                这里执行回调操作;
+                注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，
+                回调函数会在表单验证全部通过后执行，然后判断是否提交表单，
+                如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+            */
+        }
+    });
+
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="imgsize" class="fs-18 ff-yahei">获取图片文件大小</h3>
+                          <pre>
+                            <code>
+    var imgSize = $.Tool.getImgSize($('#up_img'));//获取图片文件大小 支持IE9、火狐、Chrome
+                            </code>
+                          </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="uploadpre" class="fs-18 ff-yahei">图片上传预览</h3>
+                            <pre>
+<code>
+    //所有参数：
+    $.Tool.uploadPreview({
+        UpBtn:  //选择文件控件jquery对象;
+        DivShow:    //DIV控件jquery对象;
+        ImgShow:    //图片控件jquery对象;
+        Width:  //预览宽度;
+        Height: //预览高度;
+        ImgType:    //支持文件类型 格式:["jpg","png"];
+        callback:   //选择文件后回调方法;
+    });
+
+    //常用写法：
+    $.Tool.uploadPreview({
+        UpBtn:$('#up_img'),
+        DivShow:$('#imgdiv'),
+        ImgShow:$('#imgShow'),
+        Width:500,
+        Height:300,
+        ImgType:["jpg","png"],
+        callback:function(){
+            var imgobj = new Image();
+
+            alert('图片大小：'+ $.Tool.getImgSize($('#up_img'))+'k');
+            imgobj.src = $('#imgShow').attr('src');
+
+            imgobj.onload = function(){
+                if(this.width<500 && this.height<300){
+                    $.Tool.tips({type:2,content:"您上传的图片尺寸要大于500*300px"});
+                    $('#imgShow').attr('src','');
+                    $('#up_img').val('');
+                }
+            }
+        }
+    });
+    <div id="imgdiv" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale); width:180px;height:180px;border:solid 1px black;"></div>
+    <input type="file" id="up_img" />
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="datepicker" class="fs-18 ff-yahei">日期插件</h3>
+                            <pre>
+                                <code>
+    使用方法可见：http://laydate.layui.com/
+
+    默认调用：&lt;input onclick="laydate()"&gt;
+    时间：<input class="c-333" type="text" onclick="laydate()">
+                                </code>
+                            </pre>
+                            <pre>
+                                <code>
+    规定格式：&lt;input onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"&gt;
+    时间：<input class="c-333" type="text" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                                </code>
+                            </pre>
+                            <pre>
+                                <code>
+    开始日：&lt;input  id="start" style="width:200px; margin-right:10px;"&gt;
+    结束日：&lt;input id="end" style="width:200px;"&gt;
+    var start = {
+        elem: '#start',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        min: laydate.now(), //设定最小日期为当前日期 或者：laydate.now(-1), -1代表昨天，-2代表前天，以此类推
+        max: '2099-06-16 23:59:59', //最大日期
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            end.min = datas; //开始日选好后，重置结束日的最小日期
+            end.start = datas //将结束日的初始值设定为开始日
+        }
+    };
+    var end = {
+        elem: '#end',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        min: laydate.now(),
+        max: '2099-06-16 23:59:59',
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            start.max = datas; //结束日选好后，重置开始日的最大日期
+        }
+    };
+    laydate(start);
+    laydate(end);
+    开始日：<input class="c-333"  id="start" style="width:200px; margin-right:10px;">
+    结束日：<input class="c-333" id="end" style="width:200px;">
+                                </code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="myAjax" class="fs-18 ff-yahei">myAjax</h3>
+                            <pre>
+<code>
+    //ajax和ajaxform提交封装 默认为POST提交
+    $.myAjax({
+        formObj:$('#formId'),   //如果存在这个属性则说明是用ajaxSubmit提交 不存在则视为ajax提交
+        url:'/xxxxx/xx',
+        submitBtn:$('.save'),   //提交时，会将此按钮disabled防止多次提交，之后无论请求成功或失败都会解除disabled
+        data:{name:'iLong',age:24},
+        success:function(data){
+
+        }
+    })
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="preloadImages" class="fs-18 ff-yahei">图片预加载</h3>
+                            <pre>
+<code>
+    /**
+    * 图片预加载(请在需要预加载的img标签上添加data-src="需要预加载的图片路径")
+    * 用途：将可能会显示的图片 在"后台"加载出来 应用：懒加载技术、幻灯片等等
+    * @param imgObj
+    */
+    $.Tool.preloadImages(imgsObj);//请在需要预加载的img标签上添加 data-src="需要预加载的图片路径"
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="isInView" class="fs-18 ff-yahei">判断元素是否在可视区</h3>
+                            <pre>
+<code>
+    /**
+    * 判断某元素是否在可视区内
+    * @param $obj //jquery对象
+    * @returns {boolean}
+    */
+    $.Tool.isInView($obj);//判断某元素是否在可视区内 true=在 false=不在
+    <a class="btn btn-default mt-10" href="isInView.html" target="_blank">查看Demo</a>
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+                <!--Table-->
+                <div class="row">
+                        <h3 id="lazyLoad" class="fs-18 ff-yahei">图片懒加载</h3>
+                            <pre>
+<code>
+    /**
+    * 图片懒加载 当图片出现在可视区时显示
+    * 使用方法：&lt;img data-src="img.jpg" src="placehold.jpg" &gt;
+    * @param imgBoxs
+    */
+    <a class="btn btn-default mt-10" href="lazyLoad.html" target="_blank">查看Demo</a>
+</code>
+                            </pre>
+                </div>
+                <!--End Table-->
+
+<!--iCheckbox-->
+                <div class="row">
+                        <h3 id="checkbox" class="fs-18 ff-yahei">自定义checkbox</h3>
+                            <pre>
+<code>
+    /**
+    * 图片懒加载 当图片出现在可视区时显示
+    * 使用方法：&lt;div class="my-checkbox"&gt;&lt;input type="checkbox" &gt;&lt;/div&gt;
+    * @param imgBoxs
+    */
+    $('.my-checkbox').checkbox(function(){
+            alert('checked: '+ $(this).prop('checked') )
+    });
+
+<div class="my-checkbox"><input type="checkbox" ></div>
+<label><div class="my-checkbox"><input type="checkbox" ></div>Hello</label>
+
+</code>
+                            </pre>
+                </div>
+ <!--End iCheckbox-->
+
+            </div>
+            <div class="col-l-3">
+                <div class="ui-nav">
+                    <menu>
+                        <li class="active"><a href="#stylecss">style公用样式说明</a></li>
+                        <li><a href="#buttons">按钮</a></li>
+                        <li><a href="#ipts">文本框</a></li>
+                        <li><a href="#pagings">分页</a></li>
+                        <li><a href="#tables">表格</a></li>
+                        <li><a href="#scroll">自定义滚动条</a></li>
+                        <li><a href="#grid">栅格系统</a></li>
+                        <li><a href="#switch">Switch开关</a></li>
+                        <li><a href="#dialog">Dialog</a></li>
+                        <li><a href="#tips">迷你Tips</a></li>
+                        <li><a href="#validform">表单验证</a></li>
+                        <li><a href="#imgsize">获取图片文件大小</a></li>
+                        <li><a href="#uploadpre">图片上传预览</a></li>
+                        <li><a href="#datepicker">日期插件</a></li>
+                        <li><a href="#myAjax">myAjax</a></li>
+                        <li><a href="#preloadImages">图片预加载</a></li>
+                        <li><a href="#isInView">判断元素是否在可视区</a></li>
+                        <li><a href="#lazyLoad">图片懒加载</a></li>
+                        <li><a href="#checkbox">iCheckbox</a></li>
+                    </menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<link rel="stylesheet" href="public/css/code.css">
+<link rel="stylesheet" href="public/css/plugins/iCheckbox.css"/><!--常用公共样式-->
+<script src="public/js/highlight.pack.js"></script>
+
+<script src="public/js/plugs/switch.js"></script>
+<script src="public/js/plugs/iselect.js"></script>
+<script src="public/js/plugs/nicescroll.js"></script>
+<script src="public/js/plugs/dialog.js"></script>
+<script src="public/js/plugs/tips-mini.js"></script>
+<script src="public/js/plugs/uploadPreview.js"></script>
+<script src="public/js/plugs/laydate.js"></script>
+<script src="public/js/plugs/iCheckbox.js"></script>
+<script src="public/js/common/tool.js"></script>
+<script src="public/js/common/global.js"></script>
+<script src="public/js/gez-ui.js"></script>
+
+<script>
+
+    /**
+     *switch
+     */
+    //js初始化调用：
+    $('.switchbox').switch({
+        beforeChange:function (obj, state, next) {
+            console.log('before');
+            next();//考虑到异步情况，这里采用nodejs中间件的方式，只有执行next()时，才会继续往下执行
+        },
+        afterChange: function(obj, state) {
+            console.log('after');
+        },
+        change: function(obj, state) {
+            console.log('change');
+        }
+    });
+    
+    $('.switchbox2').switch({
+        beforeChange:function (obj, state, next) {
+            console.log('before');
+            //模拟ajax延迟
+            setTimeout(next,1000);
+        },
+        afterChange: function(obj, state) {
+            console.log('after');
+        },
+        change: function(obj, state) {
+            console.log('change');
+        }
+    });
+    
+    //你也可以对它的状态进行设置：
+    $('.j-setProp').click(function(){
+        var state = $('.switchbox:first').prop('checked');
+        var sdis = $('.switchbox:first').prop('disabled')
+        $('.switchbox:first').setSwitch({
+                checked: !state,  //设置checked属性
+                disabled: !sdis  //设置disabled属性
+        });
+    });
+    
+ 
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+
+    /*dialog*/
+    $('.dialog1').click(function(){
+        var d = dialog({
+            title: '欢迎',
+            content: '欢迎使用 artDialog 对话框组件！'
+        });
+        d.show();
+    });
+
+    $('.dialog2').click(function(){
+        var d = dialog({
+            id:'',          //防止重复ID对话框弹出。dialog.get(id)获取某个对话框
+            title: '欢迎',
+            content: '欢迎使用 artDialog 对话框组件！',
+            skin:'',        //在dialog外围添加一个class名 可用于定制皮肤
+            padding:20,
+            width:'',
+            height:'',
+            zIndex:87,
+            okValue:'OK',   //自定义确定按钮名称
+            cancelValue:'cancel',
+            onshow:function(){},//dialog初始化回调
+            onclose:function(){},//dialog关闭时回调
+            ok:function(){},//dialog确定时回调
+            cancel:function(){}//dialog取消时回调
+        }).showModal();
+    });
+
+    /*tips*/
+    $('.tips1').click(function () {
+        $.Tool.tips({type:1,content:'通过了！'});
+    });
+
+
+    /*上传图片预览*/
+    $.Tool.uploadPreview({
+        fileObj:$('#up_img'),
+        imgBox:$('#imgdiv'),
+        ImgType:["jpg","png"],
+        callback:function(){
+            if(window.navigator.userAgent.indexOf("MSIE") == -1) {
+                var imgobj = new Image();
+
+                alert('图片大小：'+ $.Tool.getImgSize($('#up_img'))+'k');
+                imgobj.src = $('#imgdiv img').attr('src');
+
+                imgobj.onload = function(){
+                    if(this.width<500 && this.height<300){
+                        $.Tool.tips({type:2,content:"您上传的图片尺寸要大于500*300px"});
+                        $('#imgdiv img').attr('src','');
+                        $('#up_img').val('');
+                    }
+                }
+            }
+
+        }
+    });
+
+    /*datepick*/
+    var start = {
+        elem: '#start',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16 23:59:59', //最大日期
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            end.min = datas; //开始日选好后，重置结束日的最小日期
+            end.start = datas //将结束日的初始值设定为开始日
+        }
+    };
+    var end = {
+        elem: '#end',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        min: laydate.now(),
+        max: '2099-06-16 23:59:59',
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            start.max = datas; //结束日选好后，重置开始日的最大日期
+        }
+    };
+    laydate(start);
+    laydate(end);
+
+
+
+    /*iCheckbox*/
+    $('.my-checkbox').checkbox(function(){
+    	alert('checked: '+ $(this).prop('checked') )
+    });
+
+</script>
+</html>

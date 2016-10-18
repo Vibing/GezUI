@@ -1,0 +1,6 @@
+/*mini-tips*/
+.ui-tips { padding: 5px 30px; color: #fff; font-size:14px; border: 1px solid #55B555; background-color: #55B555;border-radius:5px; }
+.ui-tips .close {position: absolute; top: 9px; right: 5px; width: 12px; height: 12px; line-height:12px;overflow: hidden; cursor: pointer; }
+.ui-tips-error { background-color: #FF6347; border-color: #FF6347; }
+.ui-tips-warning {background-color: #FF9900; border-color: #FF9900;}
+.ui-tips-text{color: #fff;}

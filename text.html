@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#myFile").change(function () {
+                var filepath = $("input[name='myFile']").val();
+                alert(filepath)
+                var extStart = filepath.lastIndexOf(".");
+                var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+                if (ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
+                    alert("图片限于bmp,png,gif,jpeg,jpg格式");
+                    $("#fileType").text("")
+                    $("#fileSize").text("");
+                    return false;
+                } else { $("#fileType").text(ext) }
+                var file_size = 0;
+
+                if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
+
+                    var img = new Image();
+
+                    img.src = filepath;
+
+                    while (true) {
+                        if (img.fileSize > 0) {
+                            if (img.fileSize > 3 * 1024 * 1024) {
+                                alert("图片不大于100MB。");
+                            } else {
+                                var num03 = img.fileSize / 1024;
+                                num04 = num03.toFixed(2)
+                                $("#fileSize").text(num04 + "KB");
+                            }
+                            break;
+                        }
+                    }
+                } else {
+                    file_size = this.files[0].size;
+                    var size = file_size / 1024;
+                    if (size > 10240) {
+                        alert("上传的图片大小不能超过10M！");
+                    } else {
+                        var num01 = file_size / 1024;
+                        num02 = num01.toFixed(2);
+                        $("#fileSize").text(num02 + " KB");
+                    }
+                }
+                return true;
+            });
+        });
+    </script>
+    <title>无标题文档</title>
+</head>
+<body>
+<table width="500" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="72" id="fileType">
+        </td>
+        <td width="242">
+            <input type="file" name="myFile" id="myFile" />
+        </td>
+        <td width="184" id="fileSize" class="fileSize">
+        </td>
+    </tr>
+</table>
+</body>
+</html>

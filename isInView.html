@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>判断元素是否在可视区</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+    <style>
+        html,body{height: 100%;}
+        html{overflow: auto}
+        *{margin: 0;padding: 0;}
+        .div1{height: 100px;width: 100px;background-color: red;margin-top: 1000px;}
+        .div2{border: 1px solid #000;position: fixed;top: 50%;left: 40%;padding: 10px;}
+        #isInView{color: red;}
+    </style>
+<body style="height: 2000px;">
+<h3 style="margin-top: 20px;">请滑动滚动条。。。</h3>
+<div class="div2">
+    是否在可是区：<span id="isInView"></span>
+    <p>可应用到图片懒加载效果中。</p>
+</div>
+<div class="div1">
+
+</div>
+
+</body>
+<script src="public/js/common/tool.js"></script>
+<script>
+   $('#isInView').html($.Tool.isInView($('.div1')) ? '是' :'否');
+
+   $(window).scroll(function () {
+       console.log($.Tool.isInView($('.div1')) ? '是' :'否')
+       $('#isInView').html($.Tool.isInView($('.div1')) ? '是' :'否');
+   });
+
+</script>
+</html>
