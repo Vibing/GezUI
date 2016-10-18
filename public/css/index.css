@@ -3,11 +3,10 @@ html{
     overflow:hidden;
 }
 body{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #34495E;
-    background-color: #fff;
 }
 li{list-style: none;}
 header{
@@ -82,7 +81,17 @@ h3{
 }
 
 .ui-border{
-    border: 1px solid;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: relative;
+    border:1px solid #E6E6E6;
+}
+
+.ui-border span{
+    width:100%;
+    position: absolute;
+    bottom:-20px;
+    left:0;
 }
 
 #imgdiv img{

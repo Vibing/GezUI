@@ -59,6 +59,10 @@
 .bc-eee{background-color: #eee;}
 .bc-fff{background-color: #fff;}
 
+.bc-red{background-color: #E74C3C;}
+.bc-blue{background-color: #3498DB;}
+.bc-green{background-color: #0D950D;}
+
 /*font-weight*/
 .fw-normal{font-weight: normal !important;}
 .fw-bold{font-weight: bold !important;}

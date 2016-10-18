@@ -44,7 +44,7 @@
             sets = $.extend(defaluts, arg);
 
             this.each(function(index, el) {
-                if($(el).data('_obj_serial_')) return;
+                if($(el).data('_obj_serial_')) return true;
                 var arg = $.extend({
                     obj: $(el)
                 }, sets);
@@ -62,7 +62,7 @@
                     isDisabled = arg.disabled == undefined ? currDisabled : arg.disabled;
 
                 if (isChecked == currChecked && isDisabled == currDisabled)
-                    return;
+                    return true;
 
                 if (isChecked == currChecked && isDisabled !== currDisabled) {
                     staticFn.setState($(el), isChecked, isDisabled);
