@@ -188,4 +188,18 @@
 
     $.Tool = tool;
 
+    $.fn.extend({
+        toggleClick:function(){
+            var args = arguments;
+            this.each(function(index, el) {
+                var fns = [].slice.call(args,0),
+                    backup = fns.concat();
+                $(el).click(function(e) {
+                    if (!fns.length) { fns = backup.concat()}
+                    fns[0].call(this,e);
+                    fns.shift();
+                });
+            });
+        }
+    });
 })(jQuery);
