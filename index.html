@@ -561,6 +561,7 @@
 
     你也可以对它的状态进行设置：
     $('.switchbox2').setSwitch({
+            trigger: false, //状态改变时是否触发  beforeChange、afterChange、change回调
             checked: true,  //设置checked属性为true
             disabled: true  //设置disabled属性为true
     });
